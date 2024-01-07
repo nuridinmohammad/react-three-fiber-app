@@ -1,19 +1,14 @@
 import { Canvas } from "@react-three/fiber";
-import { Physics } from "@react-three/rapier";
-
 import "./App.css";
 import { Suspense } from "react";
-import Experience from "./components/Experience";
+import {Sky} from '@react-three/drei'
 
 function App() {
   return (
     <>
-      <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
-        <color attach={"background"} args={["#ececec"]} />
+      <Canvas>
         <Suspense fallback={null}>
-          <Physics debug>
-            <Experience />
-          </Physics>
+          <Sky/>
         </Suspense>
       </Canvas>
     </>
